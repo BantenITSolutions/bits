@@ -1,0 +1,33 @@
+description = "Default Layout"
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% partial "meta" %}
+</head>
+
+<body class="homepage">
+
+<header id="header">
+        {% partial "nav" %}
+</header><!--/header-->
+
+    {% page %}
+
+{% partial "footer" %}
+
+<!-- Scripts -->
+<script type="text/javascript" src="{{ 'assets/js/html5shiv.js'|theme }}"></script>
+<script type="text/javascript" src="{{ 'assets/js/respond.min.js'|theme }}"></script>
+<script type="text/javascript" src="{{ 'assets/js/jquery.js'|theme }}"></script>
+<script type="text/javascript" src="{{ 'assets/js/bootstrap.min.js'|theme }}"></script>
+<script type="text/javascript" src="{{ 'assets/js/jquery.prettyPhoto.js'|theme }}"></script>
+<script type="text/javascript" src="{{ 'assets/js/jquery.isotope.min.js'|theme }}"></script>
+<script type="text/javascript" src="{{ 'assets/js/main.js'|theme }}"></script>
+<script type="text/javascript" src="{{ 'assets/js/plugins.js'|theme }}"></script>
+<script type="text/javascript" src="{{ 'assets/js/wow.min.js'|theme }}"></script>
+{% framework extras %}
+{% scripts %}             
+         
+</body>
+</html>

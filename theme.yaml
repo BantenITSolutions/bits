@@ -1,0 +1,12 @@
+name: BITS
+code: BITS
+description: Banten IT Solutions Bussiness Portfolio Themes for OctoberCMS
+author: Nurul Imam
+authorUrl: 'http://www.banten-it.com/'
+
+form:
+    fields:
+        site_name:
+            label: Site name
+            comment: The website name as it should appear on the front-end
+            default: Banten IT Solutions
