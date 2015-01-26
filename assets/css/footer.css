@@ -34,3 +34,12 @@
 .footer1 .entry-meta .meta-in { border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 10px 0; }
 .follow-me-icons { font-size:30px; }
 .follow-me-icons i { float:left; margin:0 10px 0 0; }
+
+.footer1 ul {
+  list-style: circle;
+  padding: 0;
+  margin: 0 ;
+}
+.footer1 ul > li {
+  margin: 6px 0 0 10px;
+}

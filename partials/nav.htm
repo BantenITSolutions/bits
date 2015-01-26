@@ -2,27 +2,37 @@
 {# Note: Only one levels of sublinks are supported by Bootstrap 3 #}
 {% set
     links = {
-	    'home':      ['home', 'Home'],
-		'about':     ['samples/about', 'About Us'],
-		'services':  ['samples/services', 'Services'],
-		'portfolio': ['samples/portfolio', 'Portfolio'],
-        'pages': {
-            name: 'Pages',
-            sublinks: {
-                'pricing':	  ['samples/pricing', 'Pricing Table'],
-                'error':	  ['error', 'Error Page'],
-                '404':		  ['404', '404 Page'],
-                'shortcodes': ['samples/shortcodes', 'Shortcodes'],
-            },
-        },
+	    'home':      ['home', 'Beranda'],
         'blog': {
-			name: 'Blog',
-			sublinks: {
-				'blog':		 ['blog/blog', 'Blog'],
-				'blog-item': ['blog/blog-item', 'Blog Item'],
+            name: 'Blog',
+            sublinks: {
+                'blog':      ['blog/blog', 'Blog'],
+                'blog-item': ['blog/blog-item', 'Blog Item'],
             },
         },
-        'contact': ['samples/contact', 'Contact'],
+        'pages': {
+            name: 'Jasa Kami',
+            sublinks: {
+                'services':  ['samples/services', 'Web Development'],
+                'pricing':    ['samples/pricing', 'Apps Development'],
+                'error':      ['error', 'Android & iOS Apps'],
+                '404':        ['404', 'Online & Offline Course'],
+                'shortcodes': ['samples/shortcodes', 'IT Consultant & Training'],
+            },
+        },
+        'page': {
+            name: 'Hosting',
+            sublinks: {
+                'error':      ['error', 'Web Hosting'],
+                '404':        ['404', 'Reseller Hosting'],
+                'shortcodes': ['samples/shortcodes', 'VPS Managed'],
+                'short': ['samples/short', 'VPS Unmanaged'],
+                'services':  ['samples/services', 'Install VPS & Server'],
+            },
+        },
+        'portfolio': ['samples/portfolio', 'Hasil Karya'],
+        'about':     ['samples/about', 'Tentang Kami'],
+        'contact': ['samples/contact', 'Hubungi Kami'],
     }
 %}
 

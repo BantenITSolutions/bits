@@ -971,7 +971,7 @@ a.accordion-toggle  i{
 }
 
 #partner {
-  background: url(../images/partners/partner_bg.png) 50% 50% no-repeat;
+  background: url(../images/portfolio/11.jpg) 50% 50% no-repeat;
   background-size: cover;
 }
 
@@ -982,7 +982,7 @@ a.accordion-toggle  i{
 
 #partner h2,
 #partner h3 {
-  color: #fff;
+  color: #eee;
 }
 
 .partners ul {
