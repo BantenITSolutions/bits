@@ -2,22 +2,16 @@
 {# Note: Only one levels of sublinks are supported by Bootstrap 3 #}
 {% set
     links = {
-	    'home':      ['home', 'Beranda'],
-        'blog': {
-            name: 'Blog',
-            sublinks: {
-                'blog':      ['blog/blog', 'Blog'],
-                'blog-item': ['blog/blog-item', 'Blog Item'],
-            },
-        },
+	'home':      ['home', 'Beranda'],
+	'blog':      ['blog', 'Blog'],
         'pages': {
             name: 'Jasa Kami',
             sublinks: {
                 'services':  ['samples/services', 'Web Development'],
                 'pricing':    ['samples/pricing', 'Apps Development'],
                 'error':      ['error', 'Android & iOS Apps'],
-                '404':        ['404', 'Online & Offline Course'],
-                'shortcodes': ['samples/shortcodes', 'IT Consultant & Training'],
+                '404':        ['404', 'Online Course'],
+                'shortcodes': ['samples/shortcodes', 'IT Consultant'],
             },
         },
         'page': {
