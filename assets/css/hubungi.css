@@ -15,7 +15,7 @@
 }
 
 #product-heading h2 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Exo', sans-serif;
   font-size: 20px;
   color: #333;
   font-weight: 700;
@@ -101,7 +101,7 @@ textarea {
 .info li {
   list-style: none;
   margin: 10px 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Exo', sans-serif;
   font-size: 13px;
   color: #666;
 }
