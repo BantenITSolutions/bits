@@ -69,3 +69,6 @@
 #pricing ul.pricing.featured li.plan-header .plan-name {
   color: #fff;
 }
+.plan-purchase a {
+    color: #333;
+}
