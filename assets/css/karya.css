@@ -1,7 +1,10 @@
 
 /* Portfolio */
 #recent-works {
-  padding: 90px 0;
+  padding: 100px 0 50px;
+  background: #20222e;
+  background-size: cover;
+  color: #fff;
 }
 #recent-works .item-inner {
   position: relative;
