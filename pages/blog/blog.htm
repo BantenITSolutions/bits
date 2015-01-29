@@ -1,54 +1,52 @@
 title = "Blog"
 url = "/blog"
 layout = "default"
+hidden = "0"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = "10"
+noPostsMessage = "No posts found"
+categoryPage = "artikel"
+postPage = "artikel"
 ==
-    <section id="blog" class="container">
+<section id="blog" class="container">
         <div class="center">
-            <h2>Blogs</h2>
-            <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+            <h2>Blog BITS.CO.ID</h2>
+            <p class="lead">BITS.CO.ID Penyedia Jasa Pembuatan Website Dan Aplikasi</p>
         </div>
 
         <div class="blog">
             <div class="row">
                  <div class="col-md-8">
+                    {% for post in posts %}
+                    
                     <div class="blog-item">
                         <div class="row">
                             <div class="col-xs-12 col-sm-2 text-center">
                                 <div class="entry-meta">
-                                    <span id="publish_date">07  NOV</span>
-                                    <span><i class="fa fa-user"></i> <a href="#">John Doe</a></span>
-                                    <span><i class="fa fa-comment"></i> <a href="{{ 'blog/blog-item' }}">2 Comments</a></span>
+                                    <span id="publish_date">{{ post.published_at|date("d - F") }}</span>
+                                    <span><i class="fa fa-user"></i> <a href="#">Nurul Imam</a></span>
+                                    <span><i class="fa fa-comment"></i> <a href="{{ 'post'|page({slug: post.slug}) }}">2 Comments</a></span>
                                     <span><i class="fa fa-heart"></i><a href="#">56 Likes</a></span>
                                 </div>
                             </div>
                                 
                             <div class="col-xs-12 col-sm-10 blog-content">
-                                <a href="#"><img class="img-responsive img-blog" src="{{ 'assets/images/blog/blog1.jpg'|theme }}" width="100%" alt="" /></a>
-                                <h2><a href="{{ 'blog/blog-item'|page }}">Consequat bibendum quam liquam viverra</a></h2>
-                                <h3>Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque. Donec nisl ante, elementum eget posuere a, consectetur a metus. Proin a adipiscing sapien. Suspendisse vehicula porta lectus vel semper. Nullam sapien elit, lacinia eu tristique non.posuere at mi. Morbi at turpis id urna ullamcorper ullamcorper.</h3>
-                                <a class="btn btn-primary readmore" href="{{ 'blog/blog-item'|page }}">Read More <i class="fa fa-angle-right"></i></a>
+                                <a href="#"><img class="img-responsive img-blog" src="
+                                    {% if post.featured_images.isEmpty() %}
+                                        {{ 'assets/images/blog/blog1.jpg'|theme }}
+                                    {% else %}
+                                        {{ post.featured_images.first().getPath() }}
+                                    {% endif %}" width="100%" alt="{{ post.title }}" /></a>
+                                <h2><a href="{{ 'post'|page({slug: post.slug}) }}">{{ post.title }}</a></h2>
+                                <h3>{{ post.excerpt }}</h3>
+                                <a class="btn btn-primary readmore" href="{{ 'post'|page({slug: post.slug}) }}">Lihat Selengkapnya 	&raquo;</i></a>
                             </div>
                         </div>    
                     </div><!--/.blog-item-->
                         
-                    <div class="blog-item">
-                        <div class="row">
-                             <div class="col-sm-2 text-center">
-                                <div class="entry-meta"> 
-                                    <span id="publish_date">07  NOV</span>
-                                    <span><i class="fa fa-user"></i> <a href="#">John Doe</a></span>
-                                    <span><i class="fa fa-comment"></i> <a href="{{ 'blog/blog-item' }}">2 Comments</a></span>
-                                    <span><i class="fa fa-heart"></i><a href="#">56 Likes</a></span>
-                                </div>
-                            </div>
-                            <div class="col-sm-10 blog-content">
-                                <a href=""><img class="img-responsive img-blog" src="{{ 'assets/images/blog/blog2.jpg'|theme }}" width="100%" alt="" /></a>
-                                <h2><a href="{{ 'blog/blog-item'|page }}">Consequat bibendum quam liquam viverra</a></h2>
-                                <h3>Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque. Donec nisl ante, elementum eget posuere a, consectetur a metus. Proin a adipiscing sapien. Suspendisse vehicula porta lectus vel semper. Nullam sapien elit, lacinia eu tristique non.posuere at mi. Morbi at turpis id urna ullamcorper ullamcorper.</h3>
-                                <a class="btn btn-primary readmore" href="{{ 'blog/blog-item'|page }}">Read More <i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>    
-                    </div><!--/.blog-item-->
+                    {% endfor %}
                         
                     <ul class="pagination pagination-lg">
                         <li><a href="#"><i class="fa fa-long-arrow-left"></i>Previous Page</a></li>
@@ -57,7 +55,7 @@ layout = "default"
                         <li><a href="#">3</a></li>
                         <li><a href="#">4</a></li>
                         <li><a href="#">5</a></li>
-                        <li><a href="#">Next Page<i class="fa fa-long-arrow-right"></i></a></li>
+                        <li><a href="{{ 'posts'|page }}">Next Page<i class="fa fa-long-arrow-right"></i></a></li>
                     </ul><!--/.pagination-->
                 </div><!--/.col-md-8-->
 

@@ -1,0 +1,45 @@
+title = "Blog"
+url = "/blog"
+layout = "blog"
+description = "Blog BITS.CO.ID - Penyedia Jasa Pembuatan Website & Aplikasi"
+hidden = "0"
+meta_title = "Blog BITS.CO.ID - Penyedia Jasa Pembuatan Website"
+meta_description = "Blog BITS.CO.ID - Penyedia Jasa Pembuatan Website & Aplikasi"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = "10"
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/blog"
+postPage = "blog/blog"
+==
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    {% for post in posts %}
+        <div class="post-preview">
+            <a href="{{ 'post'|page({slug: post.slug}) }}">
+                <h2 class="post-title">
+                    {{ post.title }}
+                </h2>
+            </a>
+                <p class="post-subtitle">
+                    {{ post.excerpt }}
+                </p>
+            <span class="post-meta">Published on {{ post.published_at|date("F jS, Y") }}</span> <br/>
+            {% for category in post.categories %}
+                <a href="{{ 'category'|page({slug: category.slug }) }}">
+                    <span class="label label-primary">{{ category.name }}</span>
+                </a>
+            {% endfor %}
+        </div>
+        <hr>
+        {% else %}
+        <h2>No posts found.</h2>
+    {% endfor %}
+ 
+    <ul class="pager">
+        <li class="next">
+            <a href="{{ 'posts'|page }}">Older Posts &rarr;</a>
+        </li>
+    </ul>
+</div>
