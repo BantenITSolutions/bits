@@ -107,9 +107,11 @@ textarea {
 }
 
 .info i {
-  color: #D9534F;
+  color: #EE8F2E;
   margin-right: 10px;
   font-size: 18px;
 }
 
-/*-- End Contact Us--*/
+.send button {
+    color: #000;
+}
