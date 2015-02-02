@@ -1,10 +1,157 @@
 title = "Artikel"
 url = "/artikel/:slug?"
 layout = "blog"
+description = "Artikel Blog"
 hidden = "0"
 
 [blogPost]
 slug = "{{ :slug }}"
-categoryPage = "blog"
+categoryPage = "kategori"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = "1"
+categoryPage = "kategori"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = "5"
+noPostsMessage = "No posts found"
+categoryPage = "kategori"
+postPage = "artikel"
 ==
-{% component 'blogPosts' %}
+<section id="blog" class="container">
+        <div class="center">
+            <h2>Blog - BITS.CO.ID</h2>
+            <p class="lead">BITS.CO.ID Penyedia Jasa Pembuatan Website Dan Aplikasi</p>
+        </div>
+
+        <div class="blog">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="blog-item">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 text-center">
+                                <div class="entry-meta">
+                                    <span id="publish_date">{{ post.published_at|date("d - F") }}</span>
+                                    <span><i class="fa fa-user"></i> <a href="/">Nurul Imam</a></span>
+                                    <span><i class="fa fa-comment"></i> <a href="{{ 'artikel'|page({slug: post.slug}) }}">2 Komentar</a></span>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-10 blog-content">
+                                <a href="{{ 'artikel'|page({slug: post.slug}) }}"><img class="img-responsive img-blog" src="
+                                    {% if post.featured_images.isEmpty() %}
+                                        {{ 'assets/images/blog/bits.jpg'|theme }}
+                                    {% else %}
+                                        {{ post.featured_images.first().getPath() }}
+                                    {% endif %}" width="100%" alt="{{ post.title }}" /></a>
+                                <h2><a href="{{ 'artikel'|page({slug: post.slug}) }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+                                <p>
+                                    {% for category in post.categories %}
+                                    <a href="{{ 'kategori'|page({slug: category.slug }) }}">
+                                        <span class="label label-warning">{{ category.name }}</span>
+                                    </a>
+                                    {% endfor %}
+                                </p>
+                                <p>{{ post.content_html|raw }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                        <h1 id="comments_title">1 Komentar</h1>
+                        <div class="media comment_section">
+                            <div class="pull-left post_comments">
+                                <a href="#"><img src="{{ 'assets/images/blog/boy3.png'|theme }}" class="img-circle" alt="" /></a>
+                            </div>
+                            <div class="media-body post_reply_comments">
+                                <h3>Adam Herianto</h3>
+                                <p>Artikelnya mantap bro, ane banyak belajar dari sini. Terus berkarya bro !</p>
+                                <a href="#">Balas</a>
+                            </div>
+                        </div>
+
+
+                        <div id="contact-page clearfix">
+                            <div class="status alert alert-success" style="display: none"></div>
+                            <div class="message_heading">
+                                <h4>Punya Komentar ?</h4>
+                                <p>Silahkan ungkapkan komentar anda dibawah ini...</p>
+                            </div>
+
+                            <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php" role="form">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <label>Nama *</label>
+                                            <input type="text" class="form-control" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email *</label>
+                                            <input type="email" class="form-control" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Website</label>
+                                            <input type="url" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="form-group">
+                                            <label>Isi Komentar *</label>
+                                            <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-lg pull-right" required="required">Kirim Komentar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                <aside class="col-md-4">
+                    <div class="widget search">
+                        <form role="form">
+                                <input type="text" class="form-control search_box" autocomplete="off" placeholder="Cari Artikel Disini...">
+                        </form>
+                    </div>
+
+                    <div class="widget archieve">
+                        <h3>Artikel Premium</h3>
+                        <ul class="blog_archieve">
+                            {% for post in posts %}
+                            <li><a href="{{ 'artikel-premium'|page({slug: post.slug}) }}"><i class="fa fa-angle-double-right"></i> {{ post.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="widget tags">
+                        <h3>Kategori</h3>
+                        <ul class="tag-cloud">
+                            {% for category in categories %}
+                            <li><a class="btn btn-xs btn-primary" href="{{ 'kategori'|page({slug: category.slug }) }}">{{ category.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="widget archieve">
+                        <h3>Artikel Terbaru</h3>
+                        <ul class="blog_archieve">
+                            {% for post in posts %}
+                            <li><a href="{{ 'artikel'|page({slug: post.slug}) }}"><i class="fa fa-angle-double-right"></i> {{ post.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="widget tags">
+                        <h3>Penanda</h3>
+                        <ul class="tag-cloud">
+                            {% for category in categories %}
+                            <li><a class="btn btn-xs btn-primary" href="{{ 'kategori'|page({slug: category.slug }) }}">{{ category.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+         </div>
+    </section>

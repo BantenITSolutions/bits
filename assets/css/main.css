@@ -55,7 +55,7 @@ h4{
 }
 
 a {
-  color: #c52d2f;
+  color: #333;
   -webkit-transition: color 300ms, background-color 300ms;
   -moz-transition: color 300ms, background-color 300ms;
   -o-transition:  color 300ms, background-color 300ms;
@@ -90,7 +90,7 @@ hr {
 }
 .btn-primary {
   padding: 8px 20px;
-  background: #c52d2f;
+  background: #1BC382;
   color: #fff;
   border-radius: 4px;
   border:none;
@@ -100,7 +100,7 @@ hr {
 
 .btn-primary:hover,
 .btn-primary:focus{
-  background: #c52d2f;
+  background: #1BC382;
   outline: none;
   box-shadow: none;
 }
@@ -264,7 +264,7 @@ ul.social-share li a {
 }
 
 ul.social-share li a:hover {
-  background: #c52d2f;
+  background: #1BC382;
   color: #fff;
 }
 
@@ -329,7 +329,7 @@ input.search-form:hover {
 }
 
 .navbar-inverse .navbar-nav > li > a:hover{
-	background-color: #c52d2f;
+	background-color: #1BC382;
   color: #fff;
 }
 
@@ -349,7 +349,7 @@ input.search-form:hover {
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
-  background-color: #c52d2f;
+  background-color: #1BC382;
   color: #fff;
 }
 
@@ -379,7 +379,7 @@ input.search-form:hover {
 .navbar-inverse .navbar-nav .dropdown-menu > li:hover > a,
 .navbar-inverse .navbar-nav .dropdown-menu > li:focus > a,
 .navbar-inverse .navbar-nav .dropdown-menu > li.active > a {
-  background-color: #c52d2f;
+  background-color: #1BC382;
   color: #fff;
 }
 
@@ -426,7 +426,7 @@ input.search-form:hover {
 
 #main-slider .carousel .btn-slide {
   padding: 8px 20px;
-  background: #c52d2f;
+  background: #1BC382;
   color: #fff;
   border-radius: 4px;
   margin-top: 25px;
@@ -474,7 +474,7 @@ input.search-form:hover {
 #main-slider .next {
   position: absolute;
   top: 50%;
-  background-color: #c52d2f;
+  background-color: #1BC382;
   color: #fff;
   display: inline-block;
   margin-top: -25px;
@@ -523,9 +523,9 @@ input.search-form:hover {
 #main-slider .carousel-indicators .active{
   width: 20px;
   height: 20px;
-  background-color: #c52d2f;
+  background-color: #1BC382;
    margin: 0 15px 0 0;
-   border: 1px solid #c52d2f;
+   border: 1px solid #1BC382;
    position: relative;
 }
 
@@ -535,8 +535,8 @@ input.search-form:hover {
   width: 24px;
   height: 24px;
   border-radius: 100%;
-  background: #c52d2f;
-  border: 1px solid #c52d2f;
+  background: #1BC382;
+  border: 1px solid #1BC382;
   left: -3px;
   top: -3px;
 }
@@ -604,7 +604,7 @@ input.search-form:hover {
   line-height: 110px;
   text-align:center;
   background: #ffffff;
-  color: #c52d2f;
+  color: #1BC382;
   border: 3px solid #ffffff;
   box-shadow: inset 0 0 0 5px #f2f2f2;
   -webkit-box-shadow: inset 0 0 0 5px #f2f2f2;
@@ -617,11 +617,11 @@ input.search-form:hover {
 }
 
 .feature-wrap i:hover {
-  background: #c52d2f;
+  background: #1BC382;
   color: #fff;
-  box-shadow: inset 0 0 0 5px #c52d2f;
-  -webkit-box-shadow: inset 0 0 0 5px #c52d2f;
-  border: 3px solid #c52d2f;
+  box-shadow: inset 0 0 0 5px #1BC382;
+  -webkit-box-shadow: inset 0 0 0 5px #1BC382;
+  border: 3px solid #1BC382;
 }
 
 #recent-works .col-xs-12.col-sm-4.col-md-3{
@@ -666,7 +666,7 @@ input.search-form:hover {
   height: 100%;
   opacity: 0;
   border-radius: 0;
-  background: #c52d2f;
+  background: #1BC382;
   color: #fff;
   vertical-align: middle;
   -webkit-transition: opacity 500ms;
@@ -878,12 +878,12 @@ a.accordion-toggle  i{
 }
 
 .panel-heading.active a.accordion-toggle i{
-  background: #c52d2f;
+  background: #1BC382;
   color: #fff;
 }
 
 .panel-heading.active a.accordion-toggle.collapsed i{
-  background: #c52d2f;
+  background: #1BC382;
   color: #fff;
 }
 
@@ -1486,7 +1486,7 @@ ul.social_icons li  a i{
 }
 
 .request h4 a{
-  background:#c52d2f;
+  background:#1BC382;
   color: #fff;
   font-size: 14px;
   font-weight: normal;
@@ -1495,7 +1495,7 @@ ul.social_icons li  a i{
 }
 
 .request h4:after {
-  border-color: #c52d2f transparent transparent;
+  border-color: #1BC382 transparent transparent;
   border-style: solid;
   border-width: 12px;
   bottom: -18px;
@@ -1507,7 +1507,7 @@ ul.social_icons li  a i{
 }
 
 .request h4:before {
-  border-color: #c52d2f transparent transparent;
+  border-color: #1BC382 transparent transparent;
   border-style: solid;
   border-width: 12px;
   bottom: -18px;
@@ -1597,8 +1597,8 @@ ul.social_icons li  a i{
 .portfolio-filter > li a:hover,
 .portfolio-filter > li a.active{
   color:#fff;
-  background: #c52d2f;
-  border: 1px solid #c52d2f;
+  background: #1BC382;
+  border: 1px solid #1BC382;
   box-shadow: none;
   -webkit-box-shadow: none;
 }
@@ -2026,12 +2026,12 @@ textarea#message{
 }
 
 .blog_category li a:hover{
-  background:#c52d2f;
+  background:#1BC382;
   color: #fff;
 }
 
  .badge:before {
-  border-color: transparent transparent transparent #c52d2f;
+  border-color: transparent transparent transparent #1BC382;
   border-style: solid;
   border-width: 10px;
   bottom: -8px;
@@ -2043,7 +2043,7 @@ textarea#message{
 }
 
 .badge {
-  background-color: #c52d2f;
+  background-color: #1BC382;
   border-radius: 5px;
   color: #fff;
   padding: 8px;
@@ -2187,7 +2187,7 @@ ul.faq li > div h3 {
 }
 
 #publish_date {
-  background: #c52d2f;
+  background: #1BC382;
   border-bottom: 5px solid #4e4e4e;
   color: #fff;
   padding: 5px 0;
@@ -2220,8 +2220,8 @@ ul.pagination > li > a i{
 
 ul.pagination > li.active > a,
 ul.pagination > li:hover > a {
-  background-color: #c52d2f !important;
-  border-color: #c52d2f !important;
+  background-color: #1BC382 !important;
+  border-color: #1BC382 !important;
   color: #fff;
 }
 
@@ -2262,7 +2262,7 @@ ul.sidebar-gallery {
 }
 
 .tag-cloud li a:hover{
-  background:#c52d2f;
+  background:#1BC382;
   color: #fff;
 }
 
@@ -2401,7 +2401,7 @@ ul.sidebar-gallery {
 }
 
 .post_reply_comments h1 a:hover{
-  color:#c52d2f;
+  color:#1BC382;
 }
 
 .post_reply_comments h4{
@@ -2417,14 +2417,14 @@ ul.sidebar-gallery {
   bottom: 15px;
   position: absolute;
   right: 30px;
-  background: #c52d2f;
+  background: #1BC382;
   color: #fff;
   border-radius: 5px;
   padding: 8px 20px;
 }
 
 .post_reply_comments a:before {
-  border-color: #c52d2f transparent transparent;
+  border-color: #1BC382 transparent transparent;
   border-style: solid;
   border-width: 16px;
   bottom: -11px;

@@ -1,45 +1,128 @@
 title = "Blog"
 url = "/blog"
 layout = "blog"
-description = "Blog BITS.CO.ID - Penyedia Jasa Pembuatan Website & Aplikasi"
+description = "Daftar Artikel"
 hidden = "0"
 meta_title = "Blog BITS.CO.ID - Penyedia Jasa Pembuatan Website"
 meta_description = "Blog BITS.CO.ID - Penyedia Jasa Pembuatan Website & Aplikasi"
 
 [blogPosts]
 pageNumber = "{{ :page }}"
-postsPerPage = "10"
+postsPerPage = "5"
 noPostsMessage = "No posts found"
-sortOrder = "published_at desc"
-categoryPage = "blog/blog"
-postPage = "blog/blog"
+categoryPage = "kategori"
+postPage = "artikel"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = "1"
+categoryPage = "kategori"
 ==
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    {% for post in posts %}
-        <div class="post-preview">
-            <a href="{{ 'post'|page({slug: post.slug}) }}">
-                <h2 class="post-title">
-                    {{ post.title }}
-                </h2>
-            </a>
-                <p class="post-subtitle">
-                    {{ post.excerpt }}
-                </p>
-            <span class="post-meta">Published on {{ post.published_at|date("F jS, Y") }}</span> <br/>
-            {% for category in post.categories %}
-                <a href="{{ 'category'|page({slug: category.slug }) }}">
-                    <span class="label label-primary">{{ category.name }}</span>
-                </a>
-            {% endfor %}
+<section id="blog" class="container">
+        <div class="center">
+            <h2>Blog - BITS.CO.ID</h2>
+            <p class="lead">BITS.CO.ID Penyedia Jasa Pembuatan Website Dan Aplikasi</p>
         </div>
-        <hr>
-        {% else %}
-        <h2>No posts found.</h2>
-    {% endfor %}
- 
-    <ul class="pager">
-        <li class="next">
-            <a href="{{ 'posts'|page }}">Older Posts &rarr;</a>
-        </li>
-    </ul>
-</div>
+
+        <div class="blog">
+            <div class="row">
+                 <div class="col-md-8">
+                    {% for post in posts %}
+
+                    <div class="blog-item">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 text-center">
+                                <div class="entry-meta">
+                                    <span id="publish_date">{{ post.published_at|date("d - F") }}</span>
+                                    <span><i class="fa fa-user"></i> <a href="/">Nurul Imam</a></span>
+                                    <span><i class="fa fa-comment"></i> <a href="{{ 'artikel'|page({slug: post.slug}) }}">2 Komentar</a></span>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-10 blog-content">
+                                <a href="{{ 'artikel'|page({slug: post.slug}) }}"><img class="img-responsive img-blog" src="
+                                    {% if post.featured_images.isEmpty() %}
+                                        {{ 'assets/images/blog/bits.jpg'|theme }}
+                                    {% else %}
+                                        {{ post.featured_images.first().getPath() }}
+                                    {% endif %}" width="100%" alt="{{ post.title }}" /></a>
+                                <h2><a href="{{ 'artikel'|page({slug: post.slug}) }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+                                <p>
+                                    {% for category in post.categories %}
+                                    <a href="{{ 'kategori'|page({slug: category.slug }) }}">
+                                        <span class="label label-warning">{{ category.name }}</span>
+                                    </a>
+                                    {% endfor %}
+                                </p>
+                                <h3>{{ post.excerpt }}</h3>
+                                <a class="btn btn-danger readmore" href="{{ 'artikel'|page({slug: post.slug}) }}">Lihat Selengkapnya  »</i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+
+
+                    <ul class="pagination pagination-lg">
+                        {% if posts.getCurrentPage > 1 %}
+                            <li><a href="/blog?page={{ posts.getCurrentPage-1 }}"><i class="fa fa-long-arrow-left"></i> Sebelumnya</a></li>
+                        {% endif %}
+
+                        {% for page in 1..posts.getLastPage %}
+                            <li class="{{ posts.getCurrentPage == page ? 'active' : null }}">
+                                <a href="/blog?page={{ page }}">{{ page }}</a>
+                            </li>
+                        {% endfor %}
+
+                        {% if posts.getLastPage > posts.getCurrentPage %}
+                            <li><a href="/blog?page={{ posts.getCurrentPage+1 }}">Selanjutnya <i class="fa fa-long-arrow-right"></i></a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+                <aside class="col-md-4">
+                    <div class="widget search">
+                        <form role="form">
+                                <input type="text" class="form-control search_box" autocomplete="off" placeholder="Cari Artikel Disini...">
+                        </form>
+                    </div>
+
+                    <div class="widget archieve">
+                        <h3>Artikel Premium</h3>
+                        <ul class="blog_archieve">
+                            {% for post in posts %}
+                            <li><a href="{{ 'artikel-premium'|page({slug: post.slug}) }}"><i class="fa fa-angle-double-right"></i> {{ post.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="widget tags">
+                        <h3>Kategori</h3>
+                        <ul class="tag-cloud">
+                            {% for category in categories %}
+                            <li><a class="btn btn-xs btn-primary" href="{{ 'kategori'|page({slug: category.slug }) }}">{{ category.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="widget archieve">
+                        <h3>Artikel Terbaru</h3>
+                        <ul class="blog_archieve">
+                            {% for post in posts %}
+                            <li><a href="{{ 'artikel'|page({slug: post.slug}) }}"><i class="fa fa-angle-double-right"></i> {{ post.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="widget tags">
+                        <h3>Penanda</h3>
+                        <ul class="tag-cloud">
+                            {% for category in categories %}
+                            <li><a class="btn btn-xs btn-primary" href="{{ 'kategori'|page({slug: category.slug }) }}">{{ category.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
