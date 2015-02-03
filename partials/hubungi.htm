@@ -4,8 +4,8 @@ description = "Contact Form"
         <div class="row">
             <div class="col-md-12">
                 <div class="heading-section">
-                    <h2>Konsultasikan Rencana anda Kepada Kami</h2>
-                    <img src="{{ 'assets/images/under-heading.png'|theme }}" alt="" >
+                    <h2 class="wow slideInDown" data-wow-duration="400ms" data-wow-delay="0ms">Konsultasikan Rencana anda Kepada Kami</h2>
+                    <img src="{{ 'assets/images/under-heading.png'|theme }}" alt="garis" class=" wow zoomIn" data-wow-duration="400ms" data-wow-delay="400ms">
                 </div>
             </div>
     </div>
@@ -15,7 +15,7 @@ description = "Contact Form"
                 <div class="product-item col-md-12">
                     <div class="row">
                         <div class="col-md-8">
-                            <div class="message-form">
+                            <div class="message-form wow slideInLeft" data-wow-duration="400ms" data-wow-delay="600ms">
                                 <form role="form" action="/kontak.php" method="post" class="send-message">
                                     <div class="row">
                                     <div class="name col-md-4">
@@ -39,7 +39,7 @@ description = "Contact Form"
                                 </form>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 wow slideInRight" data-wow-duration="400ms" data-wow-delay="600ms">
                             {% content 'kantor.htm' %}
                         </div>
                     </div>

@@ -92,5 +92,8 @@
   margin-top: -20px;
 }
 .portfolio-item:hover .overlay {
-  opacity: 1;
+  opacity: 0.9;
+}
+.sorot {
+  background: #000;
 }
